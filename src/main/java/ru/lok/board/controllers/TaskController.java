@@ -18,7 +18,7 @@ public class TaskController {
 
     private final TaskService taskService;
 
-    @GetMapping("/{page}/{pageSize}")//paging
+    @GetMapping("/{page}/{pageSize}")
     public ResponseEntity<List<TaskDto>> findAll(@PathVariable int page,
                                                  @PathVariable int pageSize) {
         Sort sort = Sort.by(Sort.Direction.DESC, "createdDate");

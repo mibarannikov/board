@@ -26,6 +26,7 @@ public class UserService {
         user.setPassword(userDTO.getPassword());
         User us = userRepository.save(user);
         return UserDto.userToDto(us);
+
     }
 
     public UserDto findUserByUsername(String username) {
