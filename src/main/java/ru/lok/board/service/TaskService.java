@@ -22,7 +22,7 @@ public class TaskService {
     private final DepartmentRepository departmentRepository;
     private final UserRepository userRepository;
 
-    public TaskDto setComplit(Long taskId) {
+    public TaskDto setComplet(Long taskId) {
         Task task = taskRepository.findById(taskId).orElseThrow(() -> new NoSuchElementException("not found task with id " + taskId));
         task.setComplited(1);
         task = taskRepository.save(task);

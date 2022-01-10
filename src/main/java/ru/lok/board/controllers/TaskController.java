@@ -37,9 +37,9 @@ public class TaskController {
         return ResponseEntity.ok(taskService.add(taskDTO));
     }
 
-    @GetMapping("/{id}/setcomplit")
-    public ResponseEntity<TaskDto> setComplit(@PathVariable Long id) {
-        return ResponseEntity.ok(taskService.setComplit(id));
+    @GetMapping("/{id}/setcomplet")
+    public ResponseEntity<TaskDto> setComplet(@PathVariable Long id) {
+        return ResponseEntity.ok(taskService.setComplet(id));
 
 
     }
