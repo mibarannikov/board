@@ -27,12 +27,12 @@ There are four main entities in the system that a user may interact with: User, 
 These entities form a hierarchy that is reflected in the API endpoints.
 A Department has one or more Task, each of which may have one or more Comments. User has one or more Task.
 
-##Task
+## Task
 
 For most users, the primary entry point for the CIViC API will be the Task endpoint.
 This endpoint allows a user to retrieve information about what Task are in Board.
 
-#Gets a list of task
+### Gets a list of task
 
 This endpoint returns a listing of Task in Board.
 You can use the {page} and {pageSize} parameters to iterate through all the variants.
@@ -43,7 +43,7 @@ HTTP Request
 GET http://localhost:8080/task/{page}/{pageSize}
 ```
 
-#Add a Task
+### Add a Task
 
 This endpoint adds a task to the Board.
 
@@ -55,9 +55,9 @@ POST http://localhost:8080/task
 
 RequestBody: {"userId":" ", "departmentId":"", "title": "", "message":""}
 
-#Task update
+### Task update
 
-This endpoint renew a task to the Board.
+This endpoint renews a task to the Board.
 
 HTTP Request
 
@@ -66,7 +66,7 @@ PUT http://localhost:8080/task
 ```
 RequestBody: {"id":"", "userId":"", "departmentId":"", "title":"", "message":""}
 
-#Complited task.
+### Complited task.
 
 This endpoint sets the completion flag for the task with the {id}.
 
@@ -76,9 +76,9 @@ HTTP Request
 GET http://localhost:8080/task/{id}/setcomplit
 ```
 
-##Department
+## Department
 
-#Add a Department
+### Add a Department
 
 This endpoint adds a department to the Board.
 
@@ -89,7 +89,7 @@ POST http://localhost:8080/department
 ```
 RequestBody: {"id":"", "nameDepartment":"", "title":""}
 
-#Department tasks.
+### Department tasks.
 
 Returns a list of department tasks. IdDepatment - {idDep}.
 
@@ -99,7 +99,7 @@ HTTP Request
 GET http://localhost:8080/department/{idDep}/task/{page}/{pageSize}
 ```
 
-#Deleting a department
+### Deleting a department
 
 This endpoint delete a department on the Board. IdDepatment - {idDep}.
 
@@ -112,7 +112,7 @@ DELETE http://localhost:8080/department/delete/{idDep}
 
 ##User
 
-#Gets a list of user
+### Gets a list of user
 
 This endpoint returns a listing of User in Board.
 You can use the {page} and {pageSize} parameters to iterate through all the variants.
@@ -123,7 +123,7 @@ HTTP Request
 GET http://localhost:8080/user/{page}/{pageSize}
 ```
 
-#Adding a user 
+### Adding a user 
 
 This endpoint adds a user.
 
@@ -135,7 +135,7 @@ POST http://localhost:8080/user
 
 RequestBody: {"username":"", "password":""}
 
-#Updating a user
+### Updating a user
 
 This endpoint udates a user.
 
@@ -146,7 +146,7 @@ PUT http://localhost:8080/user
 ```
 RequestBody: {"id":"", "username":"", "password":""}
 
-#User search
+### User search
 
 This endpoint searches for a user by username.
 
@@ -158,7 +158,7 @@ GET http://localhost:8080/user/serch/{username}
 
 ##Comment
 
-#Find comment by id
+### Find comment by id
 
 
 This endpoint searches for a comment by id.
@@ -169,7 +169,7 @@ HTTP Request
 GET http://localhost:8080/comment/{{id}}
 ```
 
-#Add a comment
+### Add a comment
 
 This endpoint adds a comment.
 
@@ -180,7 +180,7 @@ POST http://localhost:8080/comment
 ```
 RequestBody: {"taskId":"", "username":"", "message":""}
 
-#Delet a coment
+### Delet a coment
 
 This endpoint deletes a comment.
 
@@ -190,7 +190,7 @@ HTTP Request
 DELETE http://localhost:8080/comment/{id}
 ```
 
-#Get a list of comments for the task
+### Get a list of comments for the task
 
 This endpoint gives a list of comments for a task.
 HTTP Request
